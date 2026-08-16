@@ -20,15 +20,15 @@ function ProfileView({ studentData, setApiStudent }) {
   };
 
   return (
-    <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+    <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-slate-900">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl font-bold text-slate-800">Student Profile</h2>
+        <h2 className="text-xl font-bold text-slate-900">Student Profile</h2>
         {!isEditing ? (
-          <button onClick={() => setIsEditing(true)} className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm">Edit Profile</button>
+          <button onClick={() => setIsEditing(true)} className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700">Edit Profile</button>
         ) : (
           <div className="space-x-2">
-            <button onClick={() => setIsEditing(false)} className="px-4 py-2 bg-slate-200 text-slate-700 rounded-lg text-sm">Cancel</button>
-            <button onClick={handleSave} className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm">Save Changes</button>
+            <button onClick={() => setIsEditing(false)} className="px-4 py-2 bg-slate-200 text-slate-700 rounded-lg text-sm hover:bg-slate-300">Cancel</button>
+            <button onClick={handleSave} className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700">Save Changes</button>
           </div>
         )}
       </div>
@@ -36,13 +36,18 @@ function ProfileView({ studentData, setApiStudent }) {
       <div className="space-y-4">
         {Object.keys(formData).map((key) => (
           <div key={key} className="flex flex-col">
-            <label className="text-xs font-semibold text-slate-500 uppercase mb-1">{key}</label>
+            <label className="text-xs font-bold text-slate-600 uppercase mb-1">{key}</label>
             <input
               name={key}
-              value={formData[key]}
+              value={formData[key] || ''}
               onChange={handleChange}
               disabled={!isEditing}
-              className={`p-2 rounded border ${isEditing ? 'border-blue-400 bg-blue-50' : 'border-slate-200 bg-slate-50'}`}
+              spellCheck="false"
+              className={`p-3 rounded-lg border text-black font-medium outline-none transition ${
+                isEditing 
+                  ? 'border-blue-500 bg-white ring-2 ring-blue-100' 
+                  : 'border-slate-200 bg-slate-50 text-slate-800'
+              }`}
             />
           </div>
         ))}
