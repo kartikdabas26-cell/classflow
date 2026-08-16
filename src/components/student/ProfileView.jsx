@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 
 function ProfileView({ studentData, setApiStudent }) {
   const [formData, setFormData] = useState(studentData);
@@ -9,10 +8,9 @@ function ProfileView({ studentData, setApiStudent }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSave = async () => {
+  const handleSave = () => {
     try {
-      const response = await axios.put('http://localhost:5000/api/student', formData);
-      setApiStudent(response.data.data); // Update the global state
+      setApiStudent(formData);
       setIsEditing(false);
       alert("Profile updated successfully!");
     } catch (err) {
