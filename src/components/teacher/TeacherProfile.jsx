@@ -46,7 +46,7 @@ function TeacherProfile() {
     <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm max-w-2xl w-full mx-auto">
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h2 className="text-xl font-bold text-slate-800">Teacher Profile</h2>
+          <h2 className="text-xl font-bold text-slate-900">Teacher Profile</h2>
           <p className="text-xs text-slate-500">Manage your faculty account details.</p>
         </div>
         {!isEditing && (
@@ -63,65 +63,65 @@ function TeacherProfile() {
         <div className="space-y-4 text-sm">
           <div className="grid grid-cols-2 gap-4 p-3 bg-slate-50 rounded-lg">
             <span className="text-slate-500 font-medium">Full Name</span>
-            <span className="text-slate-800 font-semibold">{teacher.name}</span>
+            <span className="text-slate-900 font-bold">{teacher.name}</span>
           </div>
           <div className="grid grid-cols-2 gap-4 p-3 bg-slate-50 rounded-lg">
             <span className="text-slate-500 font-medium">Department</span>
-            <span className="text-slate-800 font-semibold">{teacher.department}</span>
+            <span className="text-slate-900 font-bold">{teacher.department}</span>
           </div>
           <div className="grid grid-cols-2 gap-4 p-3 bg-slate-50 rounded-lg">
             <span className="text-slate-500 font-medium">Designation</span>
-            <span className="text-slate-800 font-semibold">{teacher.designation}</span>
+            <span className="text-slate-900 font-bold">{teacher.designation}</span>
           </div>
           <div className="grid grid-cols-2 gap-4 p-3 bg-slate-50 rounded-lg">
             <span className="text-slate-500 font-medium">Email Address</span>
-            <span className="text-slate-800 font-semibold">{teacher.email}</span>
+            <span className="text-slate-900 font-bold">{teacher.email}</span>
           </div>
         </div>
       ) : (
         <form onSubmit={handleSave} className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-600 uppercase mb-1">Full Name</label>
+            <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
             <input 
               type="text" 
               name="name" 
               value={formData.name || ''} 
               onChange={handleChange}
               spellCheck="false"
-              className="w-full p-3 border border-slate-300 rounded-lg text-sm bg-white text-black font-semibold outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-slate-300 rounded-lg text-sm bg-white text-gray-900 font-bold outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-slate-600 uppercase mb-1">Department</label>
+            <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Department</label>
             <input 
               type="text" 
               name="department" 
               value={formData.department || ''} 
               onChange={handleChange}
               spellCheck="false"
-              className="w-full p-3 border border-slate-300 rounded-lg text-sm bg-white text-black font-semibold outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-slate-300 rounded-lg text-sm bg-white text-gray-900 font-bold outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-slate-600 uppercase mb-1">Designation</label>
+            <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Designation</label>
             <input 
               type="text" 
               name="designation" 
               value={formData.designation || ''} 
               onChange={handleChange}
               spellCheck="false"
-              className="w-full p-3 border border-slate-300 rounded-lg text-sm bg-white text-black font-semibold outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-slate-300 rounded-lg text-sm bg-white text-gray-900 font-bold outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-slate-600 uppercase mb-1">Email Address</label>
+            <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Email Address</label>
             <input 
               type="email" 
               name="email" 
               value={formData.email || ''} 
               onChange={handleChange}
               spellCheck="false"
-              className="w-full p-3 border border-slate-300 rounded-lg text-sm bg-white text-black font-semibold outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-slate-300 rounded-lg text-sm bg-white text-gray-900 font-bold outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div className="flex space-x-3 pt-2">
